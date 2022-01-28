@@ -8,10 +8,13 @@ namespace Katas
         {
             var resultado = new StringBuilder();
             if (numeroAConvertir == 4)
-                return "IV";
-            for (int i = 0; i < numeroAConvertir; i++)
+                resultado.Append("IV");
+            else
             {
-                resultado = resultado.Append("I");
+                for (int i = 0; i < numeroAConvertir; i++)
+                {
+                    resultado = resultado.Append("I");
+                }
             }
             return resultado.ToString();
         }
