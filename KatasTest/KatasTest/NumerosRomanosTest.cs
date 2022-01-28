@@ -6,13 +6,11 @@ namespace KatasTest
 {
     public class NumerosRomanosTest
     {
-        [Fact]
-        public void DeberiaDevolerICuandoEnvio1()
+        [Theory]
+        [InlineData(1, "I")]
+        [InlineData(2, "II")]
+        public void DeberiaDevolverIsCuandoEnvioNumeroDel1Al3(int numeroAConvertir, string resultadoEsperado)
         {
-            //Arrange
-            const string resultadoEsperado = "I";
-            const int numeroAConvertir = 1;
-
             //Act
             var resultado = NumerosRomanos.ConvertirArabico(numeroAConvertir);
 
