@@ -10,6 +10,7 @@ namespace KatasTest
         [InlineData(1, "I")]
         [InlineData(2, "II")]
         [InlineData(3, "III")]
+        [InlineData(4, "IV")]
         public void DeberiaDevolverIsCuandoEnvioNumeroDel1Al3(int numeroAConvertir, string resultadoEsperado)
         {
             //Act

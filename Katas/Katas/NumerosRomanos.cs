@@ -7,7 +7,9 @@ namespace Katas
         public static string ConvertirArabico(int numeroAConvertir)
         {
             var resultado = new StringBuilder();
-            for(int i = 0; i < numeroAConvertir; i++)
+            if (numeroAConvertir == 4)
+                return "IV";
+            for (int i = 0; i < numeroAConvertir; i++)
             {
                 resultado = resultado.Append("I");
             }
