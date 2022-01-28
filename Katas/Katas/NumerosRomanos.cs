@@ -4,13 +4,16 @@ namespace Katas
 {
     public class NumerosRomanos
     {
+        private static readonly int[] Valores = { 9, 5, 4 };
+        private static readonly string[] Simbolos = { "IX", "V", "IV" };
         public static string ConvertirArabico(int numeroAConvertir)
         {
             var resultado = new StringBuilder();
             var restante = numeroAConvertir;
-            restante = agregarNumerosRomanos(restante, 9, "IX", resultado);
-            restante = agregarNumerosRomanos(restante, 5, "V", resultado);
-            restante = agregarNumerosRomanos(restante, 4, "IV", resultado);
+            for (int i = 0; i < Valores.Length; i++)
+            {
+                restante = agregarNumerosRomanos(restante, Valores[i], Simbolos[i], resultado);
+            }
             for (int i = 0; i < restante; i++)
             {
                 resultado = resultado.Append("I");
