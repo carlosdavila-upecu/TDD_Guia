@@ -7,18 +7,20 @@ namespace Katas
         public static string ConvertirArabico(int numeroAConvertir)
         {
             var resultado = new StringBuilder();
-            if (numeroAConvertir == 6)
-                resultado.Append("VI");
-            else if (numeroAConvertir == 5)
-                resultado.Append("V");
-            else if (numeroAConvertir == 4)
-                resultado.Append("IV");
-            else
+            var restante = numeroAConvertir;
+            if (restante >= 5)
             {
-                for (int i = 0; i < numeroAConvertir; i++)
-                {
-                    resultado = resultado.Append("I");
-                }
+                resultado.Append("V");
+                restante -= 5;
+            }
+            else if (restante >= 4)
+            {
+                resultado.Append("IV");
+                restante -= 4;
+            }
+            for (int i = 0; i < restante; i++)
+            {
+                resultado = resultado.Append("I");
             }
             return resultado.ToString();
         }
