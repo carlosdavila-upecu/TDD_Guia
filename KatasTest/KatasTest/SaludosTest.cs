@@ -33,5 +33,19 @@ namespace KatasTest
             //Assert
             resultado.Should().Be(resultadoEsperado);
         }
+
+        [Fact]
+        public void DeberiaDevolverSaludoGritandoCuandoEnvioNombreEnMayusculas()
+        {
+            //Arrange
+            const string nombre = "CARLOS";
+            const string resultadoEsperado = "HOLA, CARLOS";
+
+            //Act
+            var resultado = Saludos.Saludar(nombre);
+
+            //Assert
+            resultado.Should().Be(resultadoEsperado);
+        }
     }
 }
