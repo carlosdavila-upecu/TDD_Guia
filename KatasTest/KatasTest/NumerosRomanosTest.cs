@@ -16,6 +16,7 @@ namespace KatasTest
         [InlineData(7, "VII")]
         [InlineData(8, "VIII")]
         [InlineData(9, "IX")]
+        [InlineData(300, "CCC")]
         public void DeberiaDevolverIsCuandoEnvioNumeroDel1Al3(int numeroAConvertir, string resultadoEsperado)
         {
             //Act
