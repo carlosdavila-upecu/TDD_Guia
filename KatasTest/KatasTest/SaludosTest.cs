@@ -52,11 +52,25 @@ namespace KatasTest
         public void DeberiaDevolverSaludoADosNombresCuandoEnvioNombresSeparadosPorComa()
         {
             //Arrange
-            const string nombre = "Carlos,Esteban";
+            const string nombres = "Carlos,Esteban";
             const string resultadoEsperado = "Hola, Carlos y Esteban";
 
             //Act
-            var resultado = Saludos.Saludar(nombre);
+            var resultado = Saludos.Saludar(nombres);
+
+            //Assert
+            resultado.Should().Be(resultadoEsperado);
+        }
+
+        [Fact]
+        public void DeberiaDevolverSaludoAVariosNombresCuandoEnvioNombresSeparadosPorComas()
+        {
+            //Arrange
+            const string nombres = "Carlos,Esteban,Daniel";
+            const string resultadoEsperado = "Hola, Carlos, Esteban y Daniel";
+
+            //Act
+            var resultado = Saludos.Saludar(nombres);
 
             //Assert
             resultado.Should().Be(resultadoEsperado);

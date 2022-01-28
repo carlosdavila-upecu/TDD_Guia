@@ -1,4 +1,6 @@
-﻿namespace Katas
+﻿using System.Linq;
+
+namespace Katas
 {
     public class Saludos
     {
@@ -11,8 +13,10 @@
                 return $"HOLA, {nombre}";
             if(nombres.Length == 1)
                 return $"Hola, {nombres[0]}";
-            else
-                return $"Hola, {nombres[0]} y {nombres[1]}";
+            var ultimoNombre = nombres.Last();
+            var nombresAcumulados = nombres.SkipLast(1)
+                .Aggregate((i, j) => i + ", " + j);
+            return $"Hola, {nombresAcumulados} y {ultimoNombre}";
         }
     }
 }
