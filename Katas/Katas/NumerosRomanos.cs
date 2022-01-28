@@ -8,12 +8,17 @@ namespace Katas
         {
             var resultado = new StringBuilder();
             var restante = numeroAConvertir;
+            if (restante >= 9)
+            {
+                resultado.Append("IX");
+                restante -= 9;
+            }
             if (restante >= 5)
             {
                 resultado.Append("V");
                 restante -= 5;
             }
-            else if (restante >= 4)
+            if (restante >= 4)
             {
                 resultado.Append("IV");
                 restante -= 4;
