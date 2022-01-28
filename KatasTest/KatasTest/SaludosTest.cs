@@ -47,5 +47,19 @@ namespace KatasTest
             //Assert
             resultado.Should().Be(resultadoEsperado);
         }
+
+        [Fact]
+        public void DeberiaDevolverSaludoADosNombresCuandoEnvioNombresSeparadosPorComa()
+        {
+            //Arrange
+            const string nombre = "Carlos,Esteban";
+            const string resultadoEsperado = "Hola, Carlos y Esteban";
+
+            //Act
+            var resultado = Saludos.Saludar(nombre);
+
+            //Assert
+            resultado.Should().Be(resultadoEsperado);
+        }
     }
 }
